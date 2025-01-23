@@ -19,9 +19,9 @@
   - [Genera oligómeros simétricos](#genera-oligómeros-simétricos)
   - [Usando potenciales auxiliares](#usando-potenciales-auxiliares)
   - [Andamiaje de motivos simétricos](#andamiaje-de-motivos-simétricos)
-  - [Notas sobre el peso de los modelos](#notas-sobre-el-peso-de-los-modelos)
-  - [Entendiendo los ficheros de salida](#entendiendo-los-ficheros-de-salida)
-  - [Docker](#docker)
+- [Notas sobre el peso de los modelos](#notas-sobre-el-peso-de-los-modelos)
+- [Entendiendo los ficheros de salida](#entendiendo-los-ficheros-de-salida)
+- [Docker](#docker)
 
 # RF*diffusion*
 
@@ -280,11 +280,11 @@ Se requiere que el usuario tenga una versión simetrizada del motivo en el pdb d
 
 Hay un script de ejemplo en `examples/design_nickel.sh`para hacer andamiaje de los dominios de unión a Ni. Esto combina muchos conceptos discutidos previamente, incluyendo la generación de oligómeros simétricos, el andamiaje de motivos y el uso de potenciales auxiliares. 
 
-## Notas sobre el peso de los modelos
+# Notas sobre el peso de los modelos
 
 No hay un modelo para gobernarlos a todos. Es decir, si queremos correr un acondicionamiento de estructura secundaria, esto requiere un modelo diferente. Todo es controlado de manera automática - el input es analiado y se trabaja desde el punto de control más apropiado. Por ello la configuración es tan importante. El punto de control exacto utilizado en la inferencia contiene todos los parámetros con los que se ha entrenado el modelo, por lo que podemos ajustar el archivo de configuración con esos valores. Si queremos especificar un punto de control diferente (si por ejemplo, entrenamos un nuevo modelo) tenemos que estar seguros de que es compatible con lo que queremos hacer, si no fallará.
 
-## Entendiendo los ficheros de salida
+# Entendiendo los ficheros de salida
 
 Hay varios ficheros de salida:
 
@@ -295,7 +295,7 @@ Hay varios ficheros de salida:
 
 3. Ficheros de trayectoria. Por defecto, los ficheros se geenran en la carpeta `/traj/`. Estos ficheros pueden ser abiertos en pymol, como pdbs con varios estados. Están ordeandos al revés, por lo que el primer pdb es la última (t=1) predicción hecha en la inferencia. Incluyen predicciones px0 (lo que el modelo predice en cada paso de tiempo) y trayectorias Xt-1 (lo que entra en el modelo a cada paso de tiempo). 
 
-## Docker 
+# Docker 
 
 En `docker/Dockerfile`se encuentra un Dockerfile para ejecutar RF*diffusion* en HPC u otros sistemas. Para contstruir y ejecutar el contenedor debemos seguir los siguientes pasos: 
 
