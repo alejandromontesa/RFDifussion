@@ -1,4 +1,30 @@
+- [RF*diffusion*](#rfdiffusion)
+- [Instalación. ¿Cómo comenzar?](#instalación-cómo-comenzar)
+- [Uso](#uso)
+  - [Ejecución básica para un monómero sin condiciones](#ejecución-básica-para-un-monómero-sin-condiciones)
+  - [Andamiaje de motivos estructurales](#andamiaje-de-motivos-estructurales)
+    - [El modelo del centro activo presenta motivos muy pequeños](#el-modelo-del-centro-activo-presenta-motivos-muy-pequeños)
+    - [La flag `inpaint_seq`](#la-flag-inpaint_seq)
+    - [Sobre `diffuser.T`](#sobre-diffusert)
+  - [Difusión parcial](#difusión-parcial)
+  - [Diseño de moléculas que se unen a un target](#diseño-de-moléculas-que-se-unen-a-un-target)
+  - [Consideraciones prácticas en el diseño de binders](#consideraciones-prácticas-en-el-diseño-de-binders)
+    - [Seleccionar el sitio de unión con el target](#seleccionar-el-sitio-de-unión-con-el-target)
+    - [Truncar la proteína target](#truncar-la-proteína-target)
+    - [Elegir los hotspots](#elegir-los-hotspots)
+    - [Escala del binder](#escala-del-binder)
+    - [Diseño de secuencia de los binders](#diseño-de-secuencia-de-los-binders)
+    - [Filtrado de los binders](#filtrado-de-los-binders)
+  - [Acondicionamiento de los plegamientos](#acondicionamiento-de-los-plegamientos)
+  - [Genera oligómeros simétricos](#genera-oligómeros-simétricos)
+  - [Usando potenciales auxiliares](#usando-potenciales-auxiliares)
+  - [Andamiaje de motivos simétricos](#andamiaje-de-motivos-simétricos)
+  - [Notas sobre el peso de los modelos](#notas-sobre-el-peso-de-los-modelos)
+  - [Entendiendo los ficheros de salida](#entendiendo-los-ficheros-de-salida)
+  - [Docker](#docker)
+
 # RF*diffusion*
+
 RFdifussion es un método para generar estructuras tridimensionales con o sin información condicional (como un motivo estructural por ejemplo). Puede ser utilizado para solventar algunos desafíos actuales en el diseño de proteínas como se destaca en el [paper original](https://www.biorxiv.org/content/10.1101/2022.12.09.519842v1).
 
 # Instalación. ¿Cómo comenzar?
